@@ -12,8 +12,8 @@ The CI workflows install the validator with `pip install flowfile==<pin>` and ru
 release. **Until that release is on PyPI, CI cannot go green** — this is expected, not a
 bug. Once it ships:
 
-- [ ] Edit `registry/config.json` and replace **both** `FLOWFILE_VERSION_PLACEHOLDER …`
-      values (`validator_flowfile_version` and `min_supported_app_version`) with the real
+``- [ ] Edit `registry/config.json` and replace **both** `FLOWFILE_VERSION_PLACEHOLDER …`
+``      values (`validator_flowfile_version` and `min_supported_app_version`) with the real
       version, e.g. `"0.4.0"`. The placeholder strings are deliberately un-parseable so a
       premature push fails loudly rather than silently pinning a nonexistent version.
 - [ ] Regenerate `registry/manifest.schema.json` from the shipped model so it can never
