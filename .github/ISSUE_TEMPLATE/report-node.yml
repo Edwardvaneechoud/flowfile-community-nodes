@@ -1,0 +1,59 @@
+name: Report a node
+description: Report a broken, misbehaving, or suspicious community node.
+title: "[node] <node-id>: short summary"
+labels: ["node-report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for functional problems or concerns about a node. **If you believe a
+        node is malicious** (data exfiltration, code execution, credential theft), please
+        open a private [security advisory](https://github.com/edwardvaneechoud/flowfile-community-nodes/security/advisories/new)
+        instead of a public issue, and do not paste a working exploit here.
+  - type: input
+    id: node_id
+    attributes:
+      label: Node id
+      description: The folder name under nodes/ (e.g. mood_emoji).
+      placeholder: mood_emoji
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Node version
+      description: The version you installed (from the node's manifest or the install dialog).
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What did you observe?
+      description: What happened, what you expected, and how to reproduce it.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Logs, error messages, a screenshot, or the input that triggers it. Redact anything sensitive.
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: How to reach you for follow-up, if you'd like.
+    validations:
+      required: false
+  - type: dropdown
+    id: severity
+    attributes:
+      label: How serious is it?
+      options:
+        - Minor (cosmetic / small bug)
+        - Broken (node does not work)
+        - Concerning (unexpected behavior, but not clearly malicious)
+    validations:
+      required: true

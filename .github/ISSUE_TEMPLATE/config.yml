@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability (private)
+    url: https://github.com/edwardvaneechoud/flowfile-community-nodes/security/advisories/new
+    about: >-
+      For malicious or vulnerable nodes (data exfiltration, code execution, credential
+      theft), open a private security advisory instead of a public issue.
+  - name: Questions & show-and-tell
+    url: https://github.com/edwardvaneechoud/Flowfile/discussions
+    about: Ask questions or share what you built in the Flowfile Discussions.

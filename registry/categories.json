@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "categories": [
+    "Input",
+    "Output",
+    "Text",
+    "Numeric",
+    "Date & Time",
+    "Cleaning",
+    "Machine Learning",
+    "Connectors",
+    "Geospatial",
+    "Utilities",
+    "Fun"
+  ]
+}

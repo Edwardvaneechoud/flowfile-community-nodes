@@ -1,0 +1,145 @@
+{
+  "$defs": {
+    "CommunityAuthor": {
+      "additionalProperties": false,
+      "properties": {
+        "github": {
+          "maxLength": 39,
+          "pattern": "^[A-Za-z0-9](?:-?[A-Za-z0-9])*$",
+          "title": "Github",
+          "type": "string"
+        },
+        "name": {
+          "default": "",
+          "maxLength": 100,
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "default": "",
+          "title": "Url",
+          "type": "string"
+        }
+      },
+      "required": [
+        "github"
+      ],
+      "title": "CommunityAuthor",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "``manifest.json`` inside a community node folder: distribution metadata only.\n\nRuntime/behavioral metadata (environment, io counts, dependencies, examples)\nis AST-extracted from node.py at index build and never trusted from here.",
+  "properties": {
+    "manifest_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Manifest Version",
+      "type": "integer"
+    },
+    "id": {
+      "pattern": "^[a-z][a-z0-9_]{2,49}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "node_name": {
+      "pattern": "^[A-Za-z][A-Za-z0-9_ ]{2,49}$",
+      "title": "Node Name",
+      "type": "string"
+    },
+    "version": {
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$",
+      "title": "Version",
+      "type": "string"
+    },
+    "description": {
+      "maxLength": 300,
+      "minLength": 10,
+      "title": "Description",
+      "type": "string"
+    },
+    "author": {
+      "$ref": "#/$defs/CommunityAuthor"
+    },
+    "maintainers": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Maintainers",
+      "type": "array"
+    },
+    "license": {
+      "title": "License",
+      "type": "string"
+    },
+    "category": {
+      "title": "Category",
+      "type": "string"
+    },
+    "tags": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8,
+      "title": "Tags",
+      "type": "array"
+    },
+    "min_flowfile_version": {
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$",
+      "title": "Min Flowfile Version",
+      "type": "string"
+    },
+    "icon": {
+      "anyOf": [
+        {
+          "const": "icon.png",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Icon"
+    },
+    "screenshots": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 5,
+      "title": "Screenshots",
+      "type": "array"
+    },
+    "homepage": {
+      "default": "",
+      "title": "Homepage",
+      "type": "string"
+    },
+    "repository": {
+      "default": "",
+      "title": "Repository",
+      "type": "string"
+    },
+    "changelog": {
+      "default": "",
+      "maxLength": 1000,
+      "title": "Changelog",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "node_name",
+    "version",
+    "description",
+    "author",
+    "license",
+    "category",
+    "min_flowfile_version"
+  ],
+  "title": "CommunityManifest",
+  "type": "object"
+}

@@ -1,0 +1,101 @@
+name: Validate PR
+
+# pull_request (NOT pull_request_target): the submitted code runs only in the fork-scoped
+# runner with a read-only token and no repository secrets.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  scope:
+    runs-on: ubuntu-latest
+    outputs:
+      mode: ${{ steps.classify.outputs.mode }}
+      node_id: ${{ steps.classify.outputs.node_id }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Compute changed files
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          git diff --name-only "$BASE_SHA...$HEAD_SHA" > changed_files.txt
+          echo "Changed files:"
+          cat changed_files.txt
+      - name: Classify scope (one PR, one node)
+        id: classify
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+        run: python .github/scope_check.py changed_files.txt --pr-author "$PR_AUTHOR"
+
+  validate:
+    needs: scope
+    if: needs.scope.outputs.mode == 'node'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+      - name: Read config
+        id: cfg
+        run: echo "python=$(jq -r .python_version registry/config.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: ${{ steps.cfg.outputs.python }}
+      - name: Install validator
+        run: pip install "flowfile==$(jq -r .validator_flowfile_version registry/config.json)"
+      - name: Validate node
+        env:
+          NODE_ID: ${{ needs.scope.outputs.node_id }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          TESTING: "True"
+          FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
+        run: |
+          python -m flowfile_core.flowfile.community_nodes.cli validate "nodes/$NODE_ID" \
+            --index index.json \
+            --blocklist registry/blocklist.json \
+            --categories registry/categories.json \
+            --pr-author "$PR_AUTHOR" \
+            --summary "$GITHUB_STEP_SUMMARY"
+
+  dry-run:
+    needs: [scope, validate]
+    if: needs.scope.outputs.mode == 'node'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          persist-credentials: false
+      - name: Read config
+        id: cfg
+        run: echo "python=$(jq -r .python_version registry/config.json)" >> "$GITHUB_OUTPUT"
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: ${{ steps.cfg.outputs.python }}
+      - name: Install validator
+        run: pip install "flowfile==$(jq -r .validator_flowfile_version registry/config.json)"
+      - name: Dry-run node
+        env:
+          NODE_ID: ${{ needs.scope.outputs.node_id }}
+          TESTING: "True"
+          FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
+        run: |
+          python -m flowfile_core.flowfile.community_nodes.cli dry-run "nodes/$NODE_ID" \
+            --timeout 120 \
+            --row-limit 1000 \
+            --summary "$GITHUB_STEP_SUMMARY"
