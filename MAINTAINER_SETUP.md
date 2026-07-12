@@ -7,15 +7,23 @@ registry until the real repo exists.
 
 ## 0. Prerequisite: the validator must be on PyPI
 
-The CI workflows install the validator with `pip install flowfile==<pin>` and run
-`python -m flowfile_core.flowfile.community_nodes.cli`. That module ships in a Flowfile
-release. **Until that release is on PyPI, CI cannot go green** — this is expected, not a
-bug. Once it ships:
+The CI workflows are meant to install the validator with `pip install flowfile==<pin>`
+and run `python -m flowfile_core.flowfile.community_nodes.cli`. That module ships in a
+Flowfile release. **Until that release is on PyPI, both workflows carry a
+`TODO(revert before launch)`** and instead install the validator from the Flowfile
+feature branch (`TEST_FLOWFILE_SPEC` in `validate-pr.yml` / `build-index.yml`) — CI runs
+green off that branch today. Once the release ships:
 
-``- [ ] Edit `registry/config.json` and replace **both** `FLOWFILE_VERSION_PLACEHOLDER …`
-``      values (`validator_flowfile_version` and `min_supported_app_version`) with the real
-      version, e.g. `"0.4.0"`. The placeholder strings are deliberately un-parseable so a
-      premature push fails loudly rather than silently pinning a nonexistent version.
+- [ ] Edit `registry/config.json` and replace the `FLOWFILE_VERSION_PLACEHOLDER …` value
+      of `validator_flowfile_version` with the real version, e.g. `"0.13.0"`
+      (`min_supported_app_version` is already set). The placeholder string is
+      deliberately un-parseable so a premature push fails loudly rather than silently
+      pinning a nonexistent version.
+- [ ] Revert the `TODO(revert before launch)` install steps in **both**
+      `.github/workflows/validate-pr.yml` and `.github/workflows/build-index.yml` back to
+      `pip install "flowfile==$(jq -r .validator_flowfile_version registry/config.json)"`
+      and drop the `TEST_FLOWFILE_SPEC` env — otherwise CI silently keeps installing the
+      feature branch.
 - [ ] Regenerate `registry/manifest.schema.json` from the shipped model so it can never
       drift from the validator:
       ```bash
@@ -37,8 +45,8 @@ bug. Once it ships:
 
 - [ ] **Settings → General → Features → Discussions**: enable.
 - [ ] In **Discussions → categories**, create a category named exactly **`Node Ratings`**
-      with format **Announcement** (only maintainers/bot can open threads; anyone can react
-      and comment). `scripts/refresh_popularity.py` reads 👍 reactions from threads in this
+      with format **Announcement** (only maintainers/bot can open threads; anyone can upvote
+      and comment). `scripts/refresh_popularity.py` reads upvotes from threads in this
       category, one thread per node id.
 
 ## 3. Branch protection on `main`
@@ -76,6 +84,11 @@ bug. Once it ships:
 
 ## 5. Register the OAuth App for in-app publishing
 
+> **Already done for the default registry** — the client id is registered and baked into
+> the app (`COMMUNITY_GITHUB_CLIENT_ID_DEFAULT` in `flowfile_core/configs/settings.py`),
+> so device flow works out of the box. Keep this section as the recipe for re-registering
+> or for a fork of the registry.
+
 The designer's **Publish → Connect GitHub** flow uses GitHub's device flow, which needs an
 OAuth App client id. This is optional — without it, contributors can still publish by pasting
 a personal access token or by downloading the bundle — but registering it enables the
@@ -111,7 +124,7 @@ one-click path.
 
 ## Notes
 
-- `index.json` and `popularity.json` are **CI-generated**. The versions committed in this
-  scaffold are seed/placeholder copies (all-zeros commit hash, empty popularity); the first
-  `build-index` / `popularity` run replaces them. There is no place for a header comment in
-  JSON — this note is the record that they are machine-owned.
+- `index.json` and `popularity.json` are **CI-generated** and machine-owned (there is no
+  place for a header comment in JSON — this note is the record). `index.json` is already
+  produced by the `build-index` bot on `main`; `popularity.json` is still the empty seed
+  until the nightly `popularity` job first finds ratings to bake.

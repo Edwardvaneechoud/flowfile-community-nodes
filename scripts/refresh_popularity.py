@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Bake node ratings into popularity.json — repo stars + per-node Discussion 👍.
+"""Bake node ratings into popularity.json — repo stars + per-node Discussion upvotes.
 
 Runs unattended nightly (see .github/workflows/popularity.yml). Stdlib only
 (urllib + json + os) so it needs no install step. For every node in index.json it reads the
 matching thread in the "Node Ratings" Discussions category (title == node id), collecting
-THUMBS_UP reactions and comment counts; indexed nodes without a thread get one created. The
+discussion upvotes and comment counts; indexed nodes without a thread get one created. The
 result is written sorted by id, and the script exits without writing when nothing changed.
 
 Auth: GITHUB_TOKEN in the environment. Repo: GITHUB_REPOSITORY (owner/name), falling back to
@@ -68,7 +68,7 @@ query($owner:String!, $name:String!, $cursor:String) {
         url
         category { name }
         comments { totalCount }
-        reactions(content: THUMBS_UP) { totalCount }
+        upvoteCount
       }
     }
   }
@@ -106,7 +106,7 @@ def fetch_repo_state(token: str, owner: str, name: str) -> dict | None:
             if (node.get("category") or {}).get("name") != RATINGS_CATEGORY:
                 continue
             threads[node["title"]] = {
-                "thumbs_up": node["reactions"]["totalCount"],
+                "upvotes": node["upvoteCount"],
                 "comments": node["comments"]["totalCount"],
                 "discussion_number": node["number"],
                 "discussion_url": node["url"],
@@ -123,7 +123,7 @@ def create_thread(token: str, repo_id: str, category_id: str, node_id: str, node
     body = (
         f"Ratings thread for the **{node_name}** node (`{node_id}`).\n\n"
         f"Source: {folder_url}\n\n"
-        "React 👍 if this node works for you."
+        "Upvote this discussion if this node works for you."
     )
     data = graphql(
         token,
@@ -136,7 +136,7 @@ def create_thread(token: str, repo_id: str, category_id: str, node_id: str, node
     if not discussion:
         return None
     return {
-        "thumbs_up": 0,
+        "upvotes": 0,
         "comments": 0,
         "discussion_number": discussion["number"],
         "discussion_url": discussion["url"],
