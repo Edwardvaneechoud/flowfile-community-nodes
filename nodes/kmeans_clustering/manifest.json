@@ -1,0 +1,27 @@
+{
+  "manifest_version": 1,
+  "id": "kmeans_clustering",
+  "node_name": "kmeans clustering",
+  "version": "1.0.1",
+  "description": "Do a kmeans clustering with sklearn",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "Edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Machine Learning",
+  "tags": [
+    "machine learning",
+    "data-science"
+  ],
+  "min_flowfile_version": "0.13.0",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
