@@ -26,22 +26,33 @@ without flagging them — use one of the two paths above so a maintainer sees it
 2. If a node is malicious or dangerously broken, it is added to
    `registry/blocklist.json` (`blocked` for security, `yanked` for a bad version) and, when
    appropriate, removed from `nodes/`.
-3. The next `index.json` build carries the blocklist. Because the index is served with a
-   short cache, clients see the delisting **within about ten minutes** of the maintainer's
-   action.
+3. The next `index.json` build carries the blocklist: a blocked node is delisted
+   entirely, and a yanked version is delisted until the author publishes a newer one.
+   Clients see the delisting on their next index fetch — immediately when a user
+   refreshes the browse tab, and **within about an hour** otherwise (the app caches the
+   index for an hour by default, `FLOWFILE_COMMUNITY_CACHE_TTL`).
 
 ## Takedown expectations and limits
 
-- **Delisting is fast** (~10 minutes) — a blocked node stops appearing in the browse list
-  and the client **refuses to install it**.
+- **Delisting lands on the next index fetch** — minutes for anyone who refreshes, up to
+  about an hour for idle clients. A blocked or yanked node stops appearing in the browse
+  list and the client **refuses to install it**.
 - **Already-installed** copies are the user's local files. Removing a node from the registry
-  does not reach into installs; users uninstall from within the app. (Runtime blocking of an
-  installed-but-now-blocked node is on the roadmap, not guaranteed today.)
-- **Historical bytes may persist on CDNs.** Artifacts were once served from commit-pinned,
+  does not reach into installs; the app shows a warning banner with an uninstall shortcut
+  for an installed node that was later blocked or yanked, but the user uninstalls it
+  themselves. (Runtime blocking of an installed-but-now-blocked node is on the roadmap,
+  not guaranteed today.)
+- **Historical bytes may persist on CDNs.** Artifacts are served from commit-pinned,
   immutable CDN URLs (jsDelivr / raw), so old bytes can remain reachable by direct URL even
   after delisting. This is why the client verifies sha256 pins **and refuses to install
   anything on the blocklist** — a blocked node cannot be installed through the app regardless
   of whether its bytes still exist somewhere.
+- **Pins are fail-closed for what executes.** A sha256 mismatch on the node file or icon
+  aborts the install; screenshots and the README are cosmetic and skipped on mismatch
+  rather than failing the install.
+- **The index itself is trusted via TLS to this repository's `main` branch** — it is not
+  signed. Write access to `main` is the real boundary, which is exactly the "merge button
+  is the security boundary" model: protect the repo and you protect the pins.
 
 ## Scope
 
