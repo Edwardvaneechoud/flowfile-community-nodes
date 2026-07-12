@@ -15,12 +15,6 @@ concurrency:
   group: index-build
   cancel-in-progress: false
 
-# TODO(revert before launch): install the validator from the feature branch until the
-# first PyPI release exists and registry/config.json is pinned (see MAINTAINER_SETUP.md).
-# Revert to `pip install "flowfile==$(jq -r .validator_flowfile_version registry/config.json)"`.
-env:
-  TEST_FLOWFILE_SPEC: "flowfile @ git+https://github.com/Edwardvaneechoud/Flowfile.git@feature/add-custom-node-store"
-
 jobs:
   build-index:
     runs-on: ubuntu-latest
@@ -39,7 +33,7 @@ jobs:
         with:
           python-version: ${{ steps.cfg.outputs.python }}
       - name: Install validator
-        run: pip install "$TEST_FLOWFILE_SPEC"
+        run: pip install "flowfile==$(jq -r .validator_flowfile_version registry/config.json)"
       - name: Validate all nodes (quick)
         env:
           TESTING: "True"

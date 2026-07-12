@@ -40,7 +40,7 @@ class KmeansClustering(nd.CustomNodeBase):
     title: str = "kmeans clustering"
     intro: str = "Do a kmeans clustering with sklearn"
     author: str = "Edwardvaneechoud"
-    version: str = "1.0.1"
+    version: str = "1.0.2"
     tags: list[str] = [
         "machine learning",
         "data-science",

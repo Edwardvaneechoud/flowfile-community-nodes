@@ -2,7 +2,7 @@
   "manifest_version": 1,
   "id": "kmeans_clustering",
   "node_name": "kmeans clustering",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Do a kmeans clustering with sklearn",
   "author": {
     "github": "Edwardvaneechoud",
