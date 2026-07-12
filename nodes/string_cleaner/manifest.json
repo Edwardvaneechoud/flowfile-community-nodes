@@ -1,0 +1,27 @@
+{
+  "manifest_version": 1,
+  "id": "string_cleaner",
+  "node_name": "String Cleaner",
+  "version": "1.0.0",
+  "description": "Trim, collapse spaces, change case, and strip characters from selected string columns.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "text",
+    "text-cleaning"
+  ],
+  "min_flowfile_version": "0.13.0",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
