@@ -1,8 +1,14 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-12T15:29:59Z",
+  "generated_at": "2026-07-12T16:51:14Z",
   "repo_stars": 0,
   "nodes": {
+    "auto_date_parser": {
+      "upvotes": 0,
+      "comments": 0,
+      "discussion_number": 14,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/14"
+    },
     "kmeans_clustering": {
       "upvotes": 1,
       "comments": 0,
