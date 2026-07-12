@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-12T07:37:55Z",
+  "generated_at": "2026-07-12T08:29:19Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "e806dbdc1e6fc3ad5e93056f7a12eba935498294",
+    "commit": "949d735fa0597ba833b32bdf986cb96b4ef8bf1b",
     "min_supported_app_version": "0.13.0"
   },
   "categories": [
@@ -20,6 +20,67 @@
     "Fun"
   ],
   "nodes": [
+    {
+      "id": "kmeans_clustering",
+      "node_name": "kmeans clustering",
+      "version": "1.0.1",
+      "description": "Do a kmeans clustering with sklearn",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "Edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Machine Learning",
+      "palette_category": "ML",
+      "tags": [
+        "machine learning",
+        "data-science"
+      ],
+      "environment": "kernel",
+      "dependencies": [
+        "scikit-learn"
+      ],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.13.0",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-07-12T08:29:19Z",
+      "updated_at": "2026-07-12T08:29:19Z",
+      "changelog": "",
+      "path": "nodes/kmeans_clustering",
+      "artifacts": {
+        "node": {
+          "path": "nodes/kmeans_clustering/node.py",
+          "sha256": "226fa01411e258485bd212975e8fef82e655844c82268d617e2f77e42bab2562",
+          "size": 8060
+        },
+        "manifest": {
+          "path": "nodes/kmeans_clustering/manifest.json",
+          "sha256": "333d54ddf9d04c631bb0f9286f7d005d08d64048d1fad0d31bbbdd1b0698d191",
+          "size": 568
+        },
+        "icon": {
+          "path": "nodes/kmeans_clustering/icon.png",
+          "sha256": "f40040bf7dab7d1241b436eddfcd4c7dd9d57fa682a6502048447f2e45cd7e63",
+          "size": 82706
+        },
+        "readme": {
+          "path": "nodes/kmeans_clustering/README.md",
+          "sha256": "d46b519cb473245505a7ec2a2423b2956cd173597743189a4575a69c4b2ba209",
+          "size": 277
+        },
+        "screenshots": [
+          {
+            "path": "nodes/kmeans_clustering/screenshots/1.png",
+            "sha256": "7b9e0b5eb89e038e09d42705a9e4dbe45198a1beb1f7e2837c634e9146ded4fa",
+            "size": 167821
+          }
+        ]
+      }
+    },
     {
       "id": "mood_emoji",
       "node_name": "Mood Emoji",
