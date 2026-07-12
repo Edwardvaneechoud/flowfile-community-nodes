@@ -68,6 +68,7 @@ jobs:
           NODE_ID: ${{ needs.scope.outputs.node_id }}
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
           TESTING: "True"
+          FLOWFILE_SKIP_INIT_DB: "1"
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
         run: |
           python -m flowfile_core.flowfile.community_nodes.cli validate "nodes/$NODE_ID" \
@@ -100,6 +101,7 @@ jobs:
         env:
           NODE_ID: ${{ needs.scope.outputs.node_id }}
           TESTING: "True"
+          FLOWFILE_SKIP_INIT_DB: "1"
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
         run: |
           python -m flowfile_core.flowfile.community_nodes.cli dry-run "nodes/$NODE_ID" \

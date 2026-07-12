@@ -39,11 +39,13 @@ jobs:
       - name: Validate all nodes (quick)
         env:
           TESTING: "True"
+          FLOWFILE_SKIP_INIT_DB: "1"
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
         run: python -m flowfile_core.flowfile.community_nodes.cli validate-all . --quick
       - name: Rebuild index
         env:
           TESTING: "True"
+          FLOWFILE_SKIP_INIT_DB: "1"
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
           GITHUB_SHA: ${{ github.sha }}
         run: |
