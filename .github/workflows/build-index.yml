@@ -28,6 +28,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          # Push index.json as the token owner (a repo admin who bypasses the ruleset).
+          # Falls back to the default token until REGISTRY_PUSH_TOKEN is set (see MAINTAINER_SETUP.md).
+          token: ${{ secrets.REGISTRY_PUSH_TOKEN || github.token }}
       - name: Read config
         id: cfg
         run: echo "python=$(jq -r .python_version registry/config.json)" >> "$GITHUB_OUTPUT"
@@ -39,11 +43,13 @@ jobs:
       - name: Validate all nodes (quick)
         env:
           TESTING: "True"
+          FLOWFILE_SKIP_INIT_DB: "1"
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
-        run: python -m flowfile_core.flowfile.community_nodes.cli validate-all . --quick
+        run: python -m flowfile_core.flowfile.community_nodes.cli validate-all --repo-root . --quick
       - name: Rebuild index
         env:
           TESTING: "True"
+          FLOWFILE_SKIP_INIT_DB: "1"
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
           GITHUB_SHA: ${{ github.sha }}
         run: |

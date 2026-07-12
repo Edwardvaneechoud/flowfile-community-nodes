@@ -49,10 +49,21 @@ bug. Once it ships:
         (they appear in the list after `validate-pr.yml` has run once — open a throwaway PR
         to surface them, then add them here).
   - [ ] Require branches to be up to date before merging.
-  - [ ] **Allow the GitHub Actions app to bypass** the PR requirement (or use a targeted
-        bypass / ruleset exception). The `build-index` and `popularity` workflows commit
-        `index.json` / `popularity.json` directly to `main` as the registry bot — they must
-        not be blocked by the PR rule. Keep the bypass scoped to the Actions app only.
+  - [ ] **Let the registry bot bypass the PR rule.** The `build-index` and `popularity`
+        workflows commit `index.json` / `popularity.json` directly to `main`. GitHub rulesets
+        do **not** expose the built-in `github-actions[bot]` as a bypass actor (only roles +
+        installed apps), so the default `GITHUB_TOKEN` push is rejected (`GH013`). Instead:
+    - [ ] Keep **Repository admin** in the ruleset **Bypass list** (default).
+    - [ ] **Create a PAT** (Settings → Developer settings → Personal access tokens):
+          fine-grained with **Contents: Read and write** on this repo, or classic with the
+          `repo` scope. It authenticates as you (an admin), so its pushes bypass.
+    - [ ] Add it as a repo secret named **`REGISTRY_PUSH_TOKEN`**
+          (Settings → Secrets and variables → Actions → New repository secret).
+          The two bot workflows check out with `token: ${{ secrets.REGISTRY_PUSH_TOKEN || github.token }}`
+          and push as you once the secret exists (until then they fall back and the push is
+          blocked, which is fine pre-launch).
+    - [ ] *(Alternative, no secret)* regenerate `index.json` locally and `git push` it
+          yourself after each merge — as an admin your direct push bypasses the ruleset.
 
 ## 4. Actions security settings
 
