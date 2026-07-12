@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
   "validator_flowfile_version": "FLOWFILE_VERSION_PLACEHOLDER — set to the first PyPI release shipping community_nodes",
-  "min_supported_app_version": "FLOWFILE_VERSION_PLACEHOLDER — set to the first PyPI release shipping community_nodes",
+  "min_supported_app_version": "0.13.0",
   "python_version": "3.12"
 }

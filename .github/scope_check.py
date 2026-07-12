@@ -17,6 +17,9 @@ import os
 import sys
 
 MAINTAINER = "edwardvaneechoud"
+# GitHub-reserved bot logins (unspoofable) allowed to update infra — Dependabot bumps
+# the pinned action SHAs in .github/ and never touches node folders.
+INFRA_AUTHORS = {MAINTAINER.lower(), "dependabot[bot]"}
 RESTRICTED_EXACT = {"index.json", "popularity.json"}
 RESTRICTED_PREFIXES = (".github/", "registry/", "scripts/")
 
@@ -50,11 +53,11 @@ def main() -> None:
     if not paths:
         fail("no changed files detected")
 
-    is_maintainer = args.pr_author.lower() == MAINTAINER.lower()
+    infra_allowed = args.pr_author.lower() in INFRA_AUTHORS
     node_ids = {p.split("/", 2)[1] for p in paths if p.startswith("nodes/") and len(p.split("/")) >= 3}
     restricted = [p for p in paths if is_restricted(p)]
 
-    if restricted and not is_maintainer:
+    if restricted and not infra_allowed:
         fail(f"non-maintainer '{args.pr_author}' may not modify infrastructure files: {', '.join(sorted(restricted))}")
 
     if node_ids:
