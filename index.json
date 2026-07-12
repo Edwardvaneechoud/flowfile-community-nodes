@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-12T08:29:19Z",
+  "generated_at": "2026-07-12T12:39:44Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "949d735fa0597ba833b32bdf986cb96b4ef8bf1b",
+    "commit": "0d39abda47a09fe55f9f26812d5df035a7da5092",
     "min_supported_app_version": "0.13.0"
   },
   "categories": [
