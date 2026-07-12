@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 360" role="img" aria-label="The life of a community node: an author builds it in Flowfile's Node Designer with a saved test setup, opens a pull request adding one nodes folder, CI validates, AST-scans and dry-runs it, a maintainer reviews the actual code and merges — merge is publish — a bot rebuilds the sha256-pinned index.json, and every Flowfile app browses it in the Catalog, asks for capability consent, verifies the pins and re-scans the code before the node lands in the palette.">
+  <defs>
+    <linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2DD5D3"/><stop offset="0.55" stop-color="#26A8E0"/><stop offset="1" stop-color="#1D76D6"/>
+    </linearGradient>
+    <marker id="ah" markerWidth="10" markerHeight="10" refX="7.5" refY="4.5" orient="auto"><path d="M1,1 L8,4.5 L1,8 Z" fill="#9aa8b6"/></marker>
+    <marker id="ahc" markerWidth="11" markerHeight="11" refX="7.8" refY="5" orient="auto"><path d="M1,1.2 L8.6,5 L1,8.8 Z" fill="#2DD5D3"/></marker>
+  </defs>
+  <style>
+    .box  { fill:#ffffff; stroke:#9aa0a6; stroke-width:1.4; }
+    .sub  { fill:#eef2ff; stroke:#8fb0d6; stroke-width:1.4; }
+    .chip { fill:#eef0f2; }
+    .chipn{ fill:#dfe6ff; }
+    .ic   { fill:none; stroke:#5b6470; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+    .icn  { fill:none; stroke:#4a5578; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+    .icw  { fill:none; stroke:#ffffff; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+    .t    { font-family:Roboto,Arial,sans-serif; font-weight:600; font-size:14px; fill:#233588; }
+    .s    { font-family:Roboto,Arial,sans-serif; font-size:10.5px; fill:#6b7280; }
+    .sn   { font-family:Roboto,Arial,sans-serif; font-size:10.5px; fill:#4a5578; }
+    .tag  { font-family:Roboto,Arial,sans-serif; font-size:9px; font-weight:700; letter-spacing:1px; fill:#8a93a3; }
+    .dt   { font-family:Roboto,Arial,sans-serif; font-weight:700; font-size:15px; fill:#ffffff; }
+    .fp   { font-family:Roboto,Arial,sans-serif; font-size:10px; fill:#6b7280; }
+    .albl { font-family:Roboto,Arial,sans-serif; font-size:11px; font-weight:600; fill:#6b7280; }
+    .arw  { fill:none; stroke:#b3bcc9; stroke-width:1.8; }
+    .arwc { fill:none; stroke:#2DD5D3; stroke-width:3; }
+    @media (prefers-color-scheme: dark) { .tag, .fp, .albl { fill:#aeb6c0; } }
+  </style>
+
+  <!-- ============ EDGES (behind cards) ============ -->
+  <path class="arw" d="M216,100 L250,100" marker-end="url(#ah)"/>
+  <path class="arw" d="M436,100 L470,100" marker-end="url(#ah)"/>
+  <path class="arw" d="M656,100 L682,100" marker-end="url(#ah)"/>
+  <path class="arw" d="M666,294 L614,294" marker-end="url(#ah)"/>
+  <path class="arw" d="M396,294 L344,294" marker-end="url(#ah)"/>
+  <!-- the one accent edge: merge = published -->
+  <path class="arwc" d="M792,146 C792,185 771,205 771,246" marker-end="url(#ahc)"/>
+  <text class="albl" x="802" y="204">merge = published</text>
+
+  <!-- ============ PUBLISH BAND ============ -->
+  <text class="tag" x="36" y="44">PUBLISH &#183; THE AUTHOR'S PATH</text>
+
+  <g><!-- Node Designer -->
+    <rect class="box" x="36" y="58" width="180" height="84" rx="11"/>
+    <rect class="chip" x="49" y="80" width="40" height="40" rx="8"/>
+    <g class="ic" transform="translate(57,88)">
+      <path d="M3,6 H21 M3,12 H21 M3,18 H21"/>
+      <circle cx="14" cy="6" r="2.4" fill="#eef0f2"/>
+      <circle cx="8" cy="12" r="2.4" fill="#eef0f2"/>
+      <circle cx="16" cy="18" r="2.4" fill="#eef0f2"/>
+    </g>
+    <text class="t" x="98" y="86">Node Designer</text>
+    <text class="s" x="98" y="104">build your node,</text>
+    <text class="s" x="98" y="118">save its test setup</text>
+  </g>
+
+  <g><!-- Pull request -->
+    <rect class="box" x="256" y="58" width="180" height="84" rx="11"/>
+    <rect class="chip" x="269" y="80" width="40" height="40" rx="8"/>
+    <g class="ic" transform="translate(277,88)">
+      <circle cx="6" cy="5" r="2.5"/>
+      <path d="M6,7.5 V16.5"/>
+      <circle cx="6" cy="19" r="2.5"/>
+      <path d="M10,5 h5.5 a3.5,3.5 0 0 1 3.5,3.5 V16.5"/>
+      <circle cx="19" cy="19" r="2.5"/>
+    </g>
+    <text class="t" x="318" y="86">Pull request</text>
+    <text class="s" x="318" y="104">one PR adds one</text>
+    <text class="s" x="318" y="118">nodes/&lt;id&gt;/ folder</text>
+  </g>
+
+  <g><!-- CI checks -->
+    <rect class="box" x="476" y="58" width="180" height="84" rx="11"/>
+    <rect class="chip" x="489" y="80" width="40" height="40" rx="8"/>
+    <g class="ic" transform="translate(497,88)">
+      <path d="M12,2.8 L19.5,5.6 V11.5 C19.5,16.5 16.2,19.6 12,21 C7.8,19.6 4.5,16.5 4.5,11.5 V5.6 Z"/>
+      <path d="M8.6,11.6 L11.1,14.1 L15.6,9.3"/>
+    </g>
+    <text class="t" x="538" y="86">CI checks</text>
+    <text class="s" x="538" y="104">validate &#183; AST scan</text>
+    <text class="s" x="538" y="118">dry-run your node</text>
+  </g>
+
+  <g><!-- review & merge gate (hero) -->
+    <text class="fp" x="792" y="44" text-anchor="middle">a maintainer reads the actual code</text>
+    <polygon points="688,100 792,54 896,100 792,146" fill="url(#brand)"/>
+    <text class="dt" x="792" y="105" text-anchor="middle">Review &amp; merge</text>
+  </g>
+
+  <!-- ============ INSTALL BAND ============ -->
+  <text class="tag" x="36" y="240">INSTALL &#183; EVERY FLOWFILE APP</text>
+
+  <g><!-- index.json (registry data) -->
+    <rect class="sub" x="666" y="252" width="210" height="84" rx="11"/>
+    <rect class="chipn" x="679" y="274" width="40" height="40" rx="8"/>
+    <g class="icn" transform="translate(687,282)">
+      <path d="M6.5,3 H14 L18.5,7.5 V21 H6.5 Z"/>
+      <path d="M14,3 V7.5 H18.5"/>
+      <path d="M9.5,12.5 H15.5 M9.5,16.5 H15.5"/>
+    </g>
+    <text class="t" x="728" y="280">index.json</text>
+    <text class="sn" x="728" y="298">rebuilt on every merge,</text>
+    <text class="sn" x="728" y="312">sha256-pins every file</text>
+  </g>
+
+  <g><!-- Community Nodes tab -->
+    <rect class="box" x="396" y="252" width="210" height="84" rx="11"/>
+    <rect class="chip" x="409" y="274" width="40" height="40" rx="8"/>
+    <g class="ic" transform="translate(417,282)">
+      <rect x="2" y="2" width="8.5" height="8.5" rx="2"/>
+      <rect x="13.5" y="2" width="8.5" height="8.5" rx="2"/>
+      <rect x="2" y="13.5" width="8.5" height="8.5" rx="2"/>
+      <rect x="13.5" y="13.5" width="8.5" height="8.5" rx="2"/>
+    </g>
+    <text class="t" x="458" y="280">Community Nodes</text>
+    <text class="s" x="458" y="298">browse in the Catalog,</text>
+    <text class="s" x="458" y="312">consent to capabilities</text>
+  </g>
+
+  <g><!-- installed in the palette -->
+    <rect class="box" x="126" y="252" width="210" height="84" rx="11"/>
+    <circle cx="159" cy="294" r="20" fill="url(#brand)"/>
+    <g class="icw" transform="translate(147,282)">
+      <path d="M9,4 V9 M15,4 V9"/>
+      <path d="M6.5,9 H17.5 V12 a5.5,5.5 0 0 1 -11,0 Z"/>
+      <path d="M12,17.5 V21"/>
+    </g>
+    <text class="t" x="188" y="280">Installed</text>
+    <text class="s" x="188" y="298">pins verified &#183; re-scanned,</text>
+    <text class="s" x="188" y="312">lands in your palette</text>
+  </g>
+</svg>
