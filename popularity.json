@@ -1,6 +1,19 @@
 {
   "schema_version": 1,
-  "generated_at": "",
+  "generated_at": "2026-07-12T09:34:43Z",
   "repo_stars": 0,
-  "nodes": {}
+  "nodes": {
+    "kmeans_clustering": {
+      "thumbs_up": 0,
+      "comments": 0,
+      "discussion_number": 7,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/7"
+    },
+    "mood_emoji": {
+      "thumbs_up": 1,
+      "comments": 0,
+      "discussion_number": 4,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/4"
+    }
+  }
 }
