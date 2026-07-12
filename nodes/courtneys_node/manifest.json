@@ -1,0 +1,23 @@
+{
+  "manifest_version": 1,
+  "id": "courtneys_node",
+  "node_name": "courtneys_node",
+  "version": "1.0.0",
+  "description": "This is just an exxample",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "fun"
+  ],
+  "min_flowfile_version": "0.13.0",
+  "screenshots": [],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
