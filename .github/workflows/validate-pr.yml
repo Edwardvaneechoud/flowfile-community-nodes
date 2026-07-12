@@ -5,12 +5,23 @@ name: Validate PR
 on:
   pull_request:
     branches: [main]
+  # Manual escape hatch: dispatch from `main` (so the CURRENT workflow runs, even when a
+  # PR branch carries a stale copy) and point `ref` at the branch whose node to validate.
+  workflow_dispatch:
+    inputs:
+      node_id:
+        description: "Node folder under nodes/ to validate (e.g. kmeans_clustering)"
+        required: true
+      ref:
+        description: "Branch/ref to check the node out from (e.g. a PR branch). Blank = this ref."
+        required: false
+        default: ""
 
 permissions:
   contents: read
 
 concurrency:
-  group: validate-pr-${{ github.event.pull_request.number }}
+  group: validate-pr-${{ github.event.pull_request.number || inputs.node_id || github.run_id }}
   cancel-in-progress: true
 
 # TODO(revert before launch): install the validator from the feature branch so CI can
@@ -24,14 +35,22 @@ jobs:
   scope:
     runs-on: ubuntu-latest
     outputs:
-      mode: ${{ steps.classify.outputs.mode }}
-      node_id: ${{ steps.classify.outputs.node_id }}
+      mode: ${{ steps.dispatch.outputs.mode || steps.classify.outputs.mode }}
+      node_id: ${{ steps.dispatch.outputs.node_id || steps.classify.outputs.node_id }}
     steps:
+      - name: Use dispatched node
+        id: dispatch
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "mode=node" >> "$GITHUB_OUTPUT"
+          echo "node_id=${{ inputs.node_id }}" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        if: github.event_name == 'pull_request'
         with:
           persist-credentials: false
           fetch-depth: 0
       - name: Compute changed files
+        if: github.event_name == 'pull_request'
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
@@ -41,6 +60,7 @@ jobs:
           cat changed_files.txt
       - name: Classify scope (one PR, one node)
         id: classify
+        if: github.event_name == 'pull_request'
         env:
           PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: python .github/scope_check.py changed_files.txt --pr-author "$PR_AUTHOR"
@@ -55,6 +75,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           persist-credentials: false
+          ref: ${{ inputs.ref || github.ref }}
       - name: Read config
         id: cfg
         run: echo "python=$(jq -r .python_version registry/config.json)" >> "$GITHUB_OUTPUT"
@@ -66,7 +87,7 @@ jobs:
       - name: Validate node
         env:
           NODE_ID: ${{ needs.scope.outputs.node_id }}
-          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login || github.actor }}
           TESTING: "True"
           FLOWFILE_SKIP_INIT_DB: "1"
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
@@ -89,6 +110,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
           persist-credentials: false
+          ref: ${{ inputs.ref || github.ref }}
       - name: Read config
         id: cfg
         run: echo "python=$(jq -r .python_version registry/config.json)" >> "$GITHUB_OUTPUT"
