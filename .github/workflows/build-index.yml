@@ -41,7 +41,7 @@ jobs:
           TESTING: "True"
           FLOWFILE_SKIP_INIT_DB: "1"
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
-        run: python -m flowfile_core.flowfile.community_nodes.cli validate-all . --quick
+        run: python -m flowfile_core.flowfile.community_nodes.cli validate-all --repo-root . --quick
       - name: Rebuild index
         env:
           TESTING: "True"
