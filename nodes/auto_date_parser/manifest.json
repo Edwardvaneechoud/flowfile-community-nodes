@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "id": "auto_date_parser",
+  "node_name": "Auto Date Parser",
+  "version": "1.0.0",
+  "description": "Detect the format of a string date column automatically and convert it to a Date or Datetime.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "Edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Date & Time",
+  "tags": [
+    "date",
+    "datetime",
+    "parsing",
+    "cleaning"
+  ],
+  "min_flowfile_version": "0.13.0",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
