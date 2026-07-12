@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-12T12:39:44Z",
+  "generated_at": "2026-07-12T13:36:20Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "0d39abda47a09fe55f9f26812d5df035a7da5092",
+    "commit": "3f4c2a464d872175ce87f7c13d636f8d62b2fed2",
     "min_supported_app_version": "0.13.0"
   },
   "categories": [
@@ -137,6 +137,65 @@
             "path": "nodes/mood_emoji/screenshots/form.png",
             "sha256": "7de86778b1177aefc9810ed3b5f0988078487c88ef18871a2ce7eba2b088e846",
             "size": 503
+          }
+        ]
+      }
+    },
+    {
+      "id": "string_cleaner",
+      "node_name": "String Cleaner",
+      "version": "1.0.0",
+      "description": "Trim, collapse spaces, change case, and strip characters from selected string columns.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Text Processing",
+      "tags": [
+        "text",
+        "text-cleaning"
+      ],
+      "environment": "local",
+      "dependencies": [],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.13.0",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-07-12T13:36:20Z",
+      "updated_at": "2026-07-12T13:36:20Z",
+      "changelog": "",
+      "path": "nodes/string_cleaner",
+      "artifacts": {
+        "node": {
+          "path": "nodes/string_cleaner/node.py",
+          "sha256": "c0e925d55573f114416e65df59e3d71f05cb54968337935a393a7079e94af239",
+          "size": 3546
+        },
+        "manifest": {
+          "path": "nodes/string_cleaner/manifest.json",
+          "sha256": "e51f21e65d05e8bc70d26e11f333f6c85692c5849118d48e70c64d5abe1f2c6f",
+          "size": 595
+        },
+        "icon": {
+          "path": "nodes/string_cleaner/icon.png",
+          "sha256": "c0640b27aea471a6007085f4d1556fda22483ade9a8a46ac09d0bdcdebb8bf5b",
+          "size": 23074
+        },
+        "readme": {
+          "path": "nodes/string_cleaner/README.md",
+          "sha256": "ef1cbc1afadeb97dda7d6b800bf1060018990520f38733859bdd15a008fcf755",
+          "size": 2632
+        },
+        "screenshots": [
+          {
+            "path": "nodes/string_cleaner/screenshots/1.png",
+            "sha256": "c171f3b20be9319130e5db8376eec0e7befd5a9ff13998722457ecf9ab13d670",
+            "size": 44159
           }
         ]
       }
