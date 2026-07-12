@@ -1,12 +1,22 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-01-01T00:00:00Z",
+  "generated_at": "2026-07-12T07:37:55Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "0000000000000000000000000000000000000000",
-    "min_supported_app_version": "0.1.0"
+    "commit": "e806dbdc1e6fc3ad5e93056f7a12eba935498294",
+    "min_supported_app_version": "0.13.0"
   },
   "categories": [
+    "Input",
+    "Output",
+    "Text",
+    "Numeric",
+    "Date & Time",
+    "Cleaning",
+    "Machine Learning",
+    "Connectors",
+    "Geospatial",
+    "Utilities",
     "Fun"
   ],
   "nodes": [
