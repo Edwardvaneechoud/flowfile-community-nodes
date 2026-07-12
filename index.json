@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-12T13:36:20Z",
+  "generated_at": "2026-07-12T15:29:46Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "3f4c2a464d872175ce87f7c13d636f8d62b2fed2",
-    "min_supported_app_version": "0.13.0"
+    "commit": "3a825c96144f6ffa488e03be0553e9c87e217eb4",
+    "min_supported_app_version": "0.13.1"
   },
   "categories": [
     "Input",
@@ -23,7 +23,7 @@
     {
       "id": "kmeans_clustering",
       "node_name": "kmeans clustering",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "description": "Do a kmeans clustering with sklearn",
       "author": {
         "github": "Edwardvaneechoud",
@@ -48,18 +48,18 @@
       "designer_editable": true,
       "risk_flags": [],
       "published_at": "2026-07-12T08:29:19Z",
-      "updated_at": "2026-07-12T08:29:19Z",
+      "updated_at": "2026-07-12T15:29:46Z",
       "changelog": "",
       "path": "nodes/kmeans_clustering",
       "artifacts": {
         "node": {
           "path": "nodes/kmeans_clustering/node.py",
-          "sha256": "226fa01411e258485bd212975e8fef82e655844c82268d617e2f77e42bab2562",
+          "sha256": "60459ef899cd70d84951b0c271aec0681768e50419f1478559e3ad2d462cfa6b",
           "size": 8060
         },
         "manifest": {
           "path": "nodes/kmeans_clustering/manifest.json",
-          "sha256": "333d54ddf9d04c631bb0f9286f7d005d08d64048d1fad0d31bbbdd1b0698d191",
+          "sha256": "fb3c1683a4de6202efbe0869d728c16b6daa85e95be681a1d89ec654446b9cc9",
           "size": 568
         },
         "icon": {
@@ -69,8 +69,8 @@
         },
         "readme": {
           "path": "nodes/kmeans_clustering/README.md",
-          "sha256": "d46b519cb473245505a7ec2a2423b2956cd173597743189a4575a69c4b2ba209",
-          "size": 277
+          "sha256": "edb23f53485eaf952ba3aa6a09f1539614b2b64a057afc8252d2305bb2c98f84",
+          "size": 1506
         },
         "screenshots": [
           {
