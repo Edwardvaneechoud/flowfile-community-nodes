@@ -127,6 +127,7 @@ jobs:
           FLOWFILE_SKIP_STARTUP_MIGRATION: "1"
         run: |
           python -m flowfile_core.flowfile.community_nodes.cli dry-run "nodes/$NODE_ID" \
+            --install-deps \
             --timeout 120 \
             --row-limit 1000 \
             --summary "$GITHUB_STEP_SUMMARY"
