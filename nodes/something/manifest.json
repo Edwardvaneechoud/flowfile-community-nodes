@@ -1,0 +1,24 @@
+{
+  "manifest_version": 1,
+  "id": "something",
+  "node_name": "SOMETHING",
+  "version": "1.0.0",
+  "description": "I want no spacess",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "text"
+  ],
+  "min_flowfile_version": "0.13.2",
+  "icon": "icon.png",
+  "screenshots": [],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
