@@ -21,7 +21,7 @@ once `flowfile==0.13.1` is live on PyPI**, or CI can't install the validator.
 - [ ] **Still open:** regenerate `registry/manifest.schema.json` from the shipped model so it
       can never drift from the validator:
       ```bash
-      pip install "flowfile==0.13.1"
+      pip install "flowfile==0.13.2"
       TESTING=True FLOWFILE_SKIP_STARTUP_MIGRATION=1 FLOWFILE_DB_PATH=/tmp/ff.db \
         python -c "import json; from flowfile_core.flowfile.community_nodes.models import manifest_json_schema; \
         print(json.dumps(manifest_json_schema(), indent=2))" > registry/manifest.schema.json

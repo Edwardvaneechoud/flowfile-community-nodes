@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "validator_flowfile_version": "0.13.1",
-  "min_supported_app_version": "0.13.1",
+  "validator_flowfile_version": "0.13.2",
+  "min_supported_app_version": "0.13.2",
   "python_version": "3.12"
 }
