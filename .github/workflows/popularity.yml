@@ -27,7 +27,7 @@ jobs:
       contents: write
       discussions: write
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v4
         with:
           # Always take main's tip so index.json includes the node Build index just committed
           # (the workflow_run event's SHA can predate that rebuild commit), and so we are on the
