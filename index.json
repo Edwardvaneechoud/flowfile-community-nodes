@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-12T16:51:02Z",
+  "generated_at": "2026-07-24T15:12:37Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "8aa44e87320ae6597396513cb7b8b87ee9cee287",
+    "commit": "b38525e4684e7652070a57b33d5b5c407cf78f12",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -77,6 +77,87 @@
             "path": "nodes/auto_date_parser/screenshots/1.png",
             "sha256": "2d31b373d8d37523f0f41df87584ac53dfbf2a96197f6d0ee2b500909f710e36",
             "size": 144924
+          }
+        ]
+      }
+    },
+    {
+      "id": "automl_compare_models",
+      "node_name": "AutoML Compare Models",
+      "version": "1.0.0",
+      "description": "Cross-validate several models on labeled data and rank them on a leaderboard.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "Flowfile",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Machine Learning",
+      "palette_category": "AutoML",
+      "tags": [
+        "machine learning",
+        "automl",
+        "model selection"
+      ],
+      "environment": "kernel",
+      "dependencies": [
+        "scikit-learn",
+        "xgboost",
+        "lightgbm",
+        "pandas",
+        "matplotlib"
+      ],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.13.3",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-07-24T15:12:37Z",
+      "updated_at": "2026-07-24T15:12:37Z",
+      "changelog": "",
+      "path": "nodes/automl_compare_models",
+      "artifacts": {
+        "node": {
+          "path": "nodes/automl_compare_models/node.py",
+          "sha256": "14bcfc4af994e84ef5986d12b97824676fc61670a0d1396d3932e531bb4d3257",
+          "size": 26866
+        },
+        "manifest": {
+          "path": "nodes/automl_compare_models/manifest.json",
+          "sha256": "a2a7a1ac5c5c95380cbad5ce867f136cf432c3b40626f23dc5ea05029dac62c2",
+          "size": 702
+        },
+        "icon": {
+          "path": "nodes/automl_compare_models/icon.png",
+          "sha256": "2ce3dd26e6850fda77b09d7b214211fc746084f5609ccd936837c3fd13e41f74",
+          "size": 79199
+        },
+        "readme": {
+          "path": "nodes/automl_compare_models/README.md",
+          "sha256": "a76a5c6b2094d64b108b0c6b09dcf15d0303077214287bc1617e9f68459d0a4d",
+          "size": 394
+        },
+        "screenshots": [
+          {
+            "path": "nodes/automl_compare_models/screenshots/1.png",
+            "sha256": "635a3e0217f1401b499909a8d6427b5bd55b0a676a65286039c774adedb332b1",
+            "size": 110362
+          },
+          {
+            "path": "nodes/automl_compare_models/screenshots/2.png",
+            "sha256": "9807049616ff463675f2d3f1dfab95b859b6e0b2124a8627d0736d3fc4a2f494",
+            "size": 80146
+          },
+          {
+            "path": "nodes/automl_compare_models/screenshots/3.png",
+            "sha256": "45aa11e53b0b209ed93169cf0c776341f826db0599420d5285904a6cc4794f94",
+            "size": 62039
+          },
+          {
+            "path": "nodes/automl_compare_models/screenshots/4.png",
+            "sha256": "59155b40312b277ad8f5e51cb65b99265aacfc98eea9b8a547417b5a3f3e91a6",
+            "size": 139969
           }
         ]
       }
