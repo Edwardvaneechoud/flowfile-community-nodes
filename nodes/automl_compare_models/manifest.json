@@ -1,0 +1,31 @@
+{
+  "manifest_version": 1,
+  "id": "automl_compare_models",
+  "node_name": "AutoML Compare Models",
+  "version": "1.0.0",
+  "description": "Cross-validate several models on labeled data and rank them on a leaderboard.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "Flowfile",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Machine Learning",
+  "tags": [
+    "machine learning",
+    "automl",
+    "model selection"
+  ],
+  "min_flowfile_version": "0.13.3",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png",
+    "screenshots/2.png",
+    "screenshots/3.png",
+    "screenshots/4.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
