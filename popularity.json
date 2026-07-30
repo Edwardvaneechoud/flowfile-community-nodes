@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-24T15:12:58Z",
+  "generated_at": "2026-07-30T03:22:26Z",
   "repo_stars": 0,
   "nodes": {
     "auto_date_parser": {
@@ -10,7 +10,7 @@
       "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/14"
     },
     "automl_compare_models": {
-      "upvotes": 0,
+      "upvotes": 1,
       "comments": 0,
       "discussion_number": 18,
       "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/18"
