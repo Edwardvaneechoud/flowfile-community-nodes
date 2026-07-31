@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-30T03:22:26Z",
+  "generated_at": "2026-07-31T15:47:54Z",
   "repo_stars": 0,
   "nodes": {
     "auto_date_parser": {
@@ -14,6 +14,12 @@
       "comments": 0,
       "discussion_number": 18,
       "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/18"
+    },
+    "automl_feature_importance": {
+      "upvotes": 0,
+      "comments": 0,
+      "discussion_number": 22,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/22"
     },
     "kmeans_clustering": {
       "upvotes": 1,
