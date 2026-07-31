@@ -1,0 +1,30 @@
+{
+  "manifest_version": 1,
+  "id": "automl_feature_importance",
+  "node_name": "AutoML Feature Importance",
+  "version": "1.0.0",
+  "description": "Rank the features that most drive the model (permutation or built-in) and publish a chart.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "Flowfile",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "machine learning",
+    "automl",
+    "explainability",
+    "feature importance"
+  ],
+  "min_flowfile_version": "0.14.0",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png",
+    "screenshots/2.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
