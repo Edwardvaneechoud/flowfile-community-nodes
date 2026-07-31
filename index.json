@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-24T15:12:37Z",
+  "generated_at": "2026-07-31T15:47:34Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "b38525e4684e7652070a57b33d5b5c407cf78f12",
+    "commit": "f54e7566ddb7bb06b37281058d98e6cf275eefc8",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -158,6 +158,78 @@
             "path": "nodes/automl_compare_models/screenshots/4.png",
             "sha256": "59155b40312b277ad8f5e51cb65b99265aacfc98eea9b8a547417b5a3f3e91a6",
             "size": 139969
+          }
+        ]
+      }
+    },
+    {
+      "id": "automl_feature_importance",
+      "node_name": "AutoML Feature Importance",
+      "version": "1.0.0",
+      "description": "Rank the features that most drive the model (permutation or built-in) and publish a chart.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "Flowfile",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "AutoML",
+      "tags": [
+        "machine learning",
+        "automl",
+        "explainability",
+        "feature importance"
+      ],
+      "environment": "kernel",
+      "dependencies": [
+        "scikit-learn",
+        "xgboost",
+        "lightgbm",
+        "pandas",
+        "matplotlib"
+      ],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.14.0",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-07-31T15:47:34Z",
+      "updated_at": "2026-07-31T15:47:34Z",
+      "changelog": "",
+      "path": "nodes/automl_feature_importance",
+      "artifacts": {
+        "node": {
+          "path": "nodes/automl_feature_importance/node.py",
+          "sha256": "e7bba7bfb2bed43b45407dcb2d4eefb02ee2f9a0abc6aa7e0543dac07d2615b7",
+          "size": 22817
+        },
+        "manifest": {
+          "path": "nodes/automl_feature_importance/manifest.json",
+          "sha256": "43d18fb0bba65c6ccb11811ee1075c2c65ee0ab591490c4f908438588ffe0735",
+          "size": 691
+        },
+        "icon": {
+          "path": "nodes/automl_feature_importance/icon.png",
+          "sha256": "5d061ea0fed3b047b42aca52158a3c7d9c700e2031cccdf6719c09ad8c8b4c3f",
+          "size": 81259
+        },
+        "readme": {
+          "path": "nodes/automl_feature_importance/README.md",
+          "sha256": "db559b17cd0a6f9df30d440f06d8a6fbe975fbe97d19dedd1f66c1bb5100eb21",
+          "size": 1457
+        },
+        "screenshots": [
+          {
+            "path": "nodes/automl_feature_importance/screenshots/1.png",
+            "sha256": "19c7fdb440fa62bb5bb7cfb59e28fa19152acdf156ff2825ac3eaba1f14b9854",
+            "size": 67579
+          },
+          {
+            "path": "nodes/automl_feature_importance/screenshots/2.png",
+            "sha256": "cc3940e277b708fef4a455877371a2980096486c588240ec7b4f225d8e6016ba",
+            "size": 152213
           }
         ]
       }
