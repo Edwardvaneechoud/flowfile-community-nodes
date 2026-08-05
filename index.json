@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-07-31T15:47:34Z",
+  "generated_at": "2026-08-05T16:26:33Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "f54e7566ddb7bb06b37281058d98e6cf275eefc8",
+    "commit": "d674d8dd70c7c96c52404dd5102acedb4ff898e7",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -20,6 +20,76 @@
     "Fun"
   ],
   "nodes": [
+    {
+      "id": "attribute_importance",
+      "node_name": "Attribute Importance",
+      "version": "1.0.0",
+      "description": "Score each attribute's model-free statistical relationship to the target (mutual information / F-test).",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "Flowfile",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Machine Learning",
+      "palette_category": "AutoML",
+      "tags": [
+        "machine learning",
+        "automl",
+        "feature selection",
+        "explainability"
+      ],
+      "environment": "kernel",
+      "dependencies": [
+        "scikit-learn",
+        "pandas",
+        "matplotlib"
+      ],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.15.1",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-08-05T16:26:33Z",
+      "updated_at": "2026-08-05T16:26:33Z",
+      "changelog": "",
+      "path": "nodes/attribute_importance",
+      "artifacts": {
+        "node": {
+          "path": "nodes/attribute_importance/node.py",
+          "sha256": "335d89a2bc61ec5f687468bef3caf17526ae774e39c6362aac1fc0df88c88e7e",
+          "size": 11627
+        },
+        "manifest": {
+          "path": "nodes/attribute_importance/manifest.json",
+          "sha256": "34885d4d39dc9967f57ca80634a319db5bfcd69ef80c953c0490da70a1672ec0",
+          "size": 700
+        },
+        "icon": {
+          "path": "nodes/attribute_importance/icon.png",
+          "sha256": "36a1f3d814a101b7fb0e76d783eb5e3fbf62000aca6df40e03d1188af2b4d9cb",
+          "size": 83667
+        },
+        "readme": {
+          "path": "nodes/attribute_importance/README.md",
+          "sha256": "e916c37a5881c151e13f3e5743a7e9f1e0c6de16351daaafd90cd4e53193cbe6",
+          "size": 1293
+        },
+        "screenshots": [
+          {
+            "path": "nodes/attribute_importance/screenshots/1.png",
+            "sha256": "c4d36a5c1cadb26d883eae8dab535375ee6b1601c4a6fe37c535597b8923fd17",
+            "size": 94420
+          },
+          {
+            "path": "nodes/attribute_importance/screenshots/2.png",
+            "sha256": "ae80499d810e699e5c67bb63744d7628fa738368a5761d216b3abb3b064f326c",
+            "size": 30189
+          }
+        ]
+      }
+    },
     {
       "id": "auto_date_parser",
       "node_name": "Auto Date Parser",
