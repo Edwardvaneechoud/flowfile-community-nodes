@@ -1,0 +1,30 @@
+{
+  "manifest_version": 1,
+  "id": "attribute_importance",
+  "node_name": "Attribute Importance",
+  "version": "1.0.0",
+  "description": "Score each attribute's model-free statistical relationship to the target (mutual information / F-test).",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "Flowfile",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Machine Learning",
+  "tags": [
+    "machine learning",
+    "automl",
+    "feature selection",
+    "explainability"
+  ],
+  "min_flowfile_version": "0.15.1",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png",
+    "screenshots/2.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
