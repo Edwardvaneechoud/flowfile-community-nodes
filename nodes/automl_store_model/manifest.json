@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "id": "automl_store_model",
+  "node_name": "AutoML Store Model",
+  "version": "1.0.0",
+  "description": "Cross-validate candidate models on training data, pick the best, and score unseen data.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "Flowfile",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Machine Learning",
+  "tags": [
+    "machine learning",
+    "automl",
+    "model store"
+  ],
+  "min_flowfile_version": "0.15.1",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png",
+    "screenshots/2.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
