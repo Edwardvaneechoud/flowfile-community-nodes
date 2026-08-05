@@ -15,7 +15,8 @@ through untouched. The target column is not needed. Missing feature columns rais
 ## Settings
 
 **Model** — pick a stored model from the artifact picker, or type its name to override the picker
-(useful when the model is published by a flow that hasn't run yet in this session). Prediction column
+(useful when the model is published by a flow that hasn't run yet in this session). The picker lists
+the global artifact store — the same one AutoML Store Model publishes to. Prediction column
 names the appended column; for classification the original class labels are restored. Turn on class
 probabilities to also append `<prediction>_proba_<class>` columns — classification only, and only for
 models that expose probabilities.

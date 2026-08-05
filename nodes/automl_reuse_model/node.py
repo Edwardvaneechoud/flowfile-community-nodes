@@ -10,7 +10,7 @@ class AutoMLReuseSettings(nd.NodeSettings):
         model_artifact=nd.SingleSelect(
             label="Stored model",
             options=nd.AvailableArtifacts(
-                scope="all",
+                scope="global",
             ),
         ),
         artifact_name=nd.TextInput(
@@ -51,7 +51,7 @@ class AutoMLReuseModel(nd.CustomNodeBase):
     example_inputs: list[dict[str, list]] = [
         {
             "x1": [
-                5,
+                5.0,
                 6.5,
                 4.7,
                 6.9,
@@ -79,6 +79,73 @@ class AutoMLReuseModel(nd.CustomNodeBase):
         },
     }
     settings_schema: AutoMLReuseSettings = AutoMLReuseSettings()
+
+    def example_artifacts(self) -> dict[str, object]:
+        """Model bundle the dry-run seeds into the artifact store.
+
+        Mirrors the bundle AutoML Store Model persists, fitted on this node's own
+        example_inputs so the dry-run exercises the real predict / predict_proba path
+        instead of short-circuiting on a missing artifact.
+        """
+        import pandas as pd
+        from sklearn.compose import ColumnTransformer
+        from sklearn.ensemble import RandomForestClassifier
+        from sklearn.impute import SimpleImputer
+        from sklearn.pipeline import Pipeline
+        from sklearn.preprocessing import LabelEncoder, OneHotEncoder, StandardScaler
+
+        features = ["x1", "x2", "region"]
+        frame = pd.DataFrame(self.example_inputs[0])[features]
+        label_encoder = LabelEncoder()
+        y = label_encoder.fit_transform(["no", "yes", "no", "yes"])
+
+        prep = ColumnTransformer(
+            [
+                (
+                    "num",
+                    Pipeline(
+                        [
+                            ("imputer", SimpleImputer(strategy="median")),
+                            ("scaler", StandardScaler()),
+                        ]
+                    ),
+                    ["x1", "x2"],
+                ),
+                (
+                    "cat",
+                    Pipeline(
+                        [
+                            ("imputer", SimpleImputer(strategy="most_frequent")),
+                            ("onehot", OneHotEncoder(handle_unknown="ignore", sparse_output=False)),
+                        ]
+                    ),
+                    ["region"],
+                ),
+            ],
+            remainder="drop",
+        )
+        pipeline = Pipeline(
+            [
+                ("prep", prep),
+                ("model", RandomForestClassifier(n_estimators=10, random_state=42)),
+            ]
+        )
+        pipeline.fit(frame, y)
+
+        return {
+            "automl_model": {
+                "flowfile_automl_version": 1,
+                "pipeline": pipeline,
+                "label_encoder": label_encoder,
+                "task": "classification",
+                "features": features,
+                "target": "y",
+                "model_name": "Random Forest",
+                "classes": [str(c) for c in label_encoder.classes_],
+                "primary_metric": "accuracy",
+                "cv_score": None,
+            }
+        }
 
     def process(self, *inputs: pl.LazyFrame) -> pl.LazyFrame:
         cfg = self.settings_schema.model
