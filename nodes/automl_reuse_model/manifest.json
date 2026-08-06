@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "id": "automl_reuse_model",
+  "node_name": "AutoML Reuse Model",
+  "version": "1.0.0",
+  "description": "Load a model persisted by AutoML Store Model and append its predictions to new data.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "Flowfile",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Machine Learning",
+  "tags": [
+    "machine learning",
+    "automl",
+    "prediction"
+  ],
+  "min_flowfile_version": "0.15.1",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png",
+    "screenshots/2.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
