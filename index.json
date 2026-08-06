@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-05T16:26:33Z",
+  "generated_at": "2026-08-06T07:47:32Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "d674d8dd70c7c96c52404dd5102acedb4ff898e7",
+    "commit": "9b5926b22a15f19e43458881bdfc2755307e9e1d",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -300,6 +300,76 @@
             "path": "nodes/automl_feature_importance/screenshots/2.png",
             "sha256": "cc3940e277b708fef4a455877371a2980096486c588240ec7b4f225d8e6016ba",
             "size": 152213
+          }
+        ]
+      }
+    },
+    {
+      "id": "automl_reuse_model",
+      "node_name": "AutoML Reuse Model",
+      "version": "1.0.0",
+      "description": "Load a model persisted by AutoML Store Model and append its predictions to new data.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "Flowfile",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Machine Learning",
+      "palette_category": "AutoML",
+      "tags": [
+        "machine learning",
+        "automl",
+        "prediction"
+      ],
+      "environment": "kernel",
+      "dependencies": [
+        "scikit-learn",
+        "xgboost",
+        "lightgbm",
+        "pandas"
+      ],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.15.1",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-08-06T07:47:32Z",
+      "updated_at": "2026-08-06T07:47:32Z",
+      "changelog": "",
+      "path": "nodes/automl_reuse_model",
+      "artifacts": {
+        "node": {
+          "path": "nodes/automl_reuse_model/node.py",
+          "sha256": "78fd93a7e9265f0d5946677fb51fa4ee1de8d3c882ae625f77f161b6e2f35d33",
+          "size": 7142
+        },
+        "manifest": {
+          "path": "nodes/automl_reuse_model/manifest.json",
+          "sha256": "298483083799d0cde7cc0aef6fe767a327ab5b32e0b1200f255d1af2efe8789f",
+          "size": 648
+        },
+        "icon": {
+          "path": "nodes/automl_reuse_model/icon.png",
+          "sha256": "59154ad3e9d00a816523b8a84f1eb13549809a2b42201da8403c73567a2fa76a",
+          "size": 93911
+        },
+        "readme": {
+          "path": "nodes/automl_reuse_model/README.md",
+          "sha256": "7d0d2017f40ff1f4ae78f4e3fbdb5796237168a5669187ae73998e08c1923854",
+          "size": 1110
+        },
+        "screenshots": [
+          {
+            "path": "nodes/automl_reuse_model/screenshots/1.png",
+            "sha256": "91861b63ac9f9127deab83dee7a81822db615507ea3504dad37439ef90996f50",
+            "size": 27753
+          },
+          {
+            "path": "nodes/automl_reuse_model/screenshots/2.png",
+            "sha256": "9486a445e36f979ed23b4ab3954a58cb5ffee9c84804b8de03885b5301a6e324",
+            "size": 178413
           }
         ]
       }
