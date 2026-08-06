@@ -1,0 +1,29 @@
+{
+  "manifest_version": 1,
+  "id": "text_embedder",
+  "node_name": "Text Embedder",
+  "version": "1.0.0",
+  "description": "Turn a text column into vectors with a local sentence-transformers model. Nothing leaves the machine.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "machine learning",
+    "nlp",
+    "embeddings",
+    "local"
+  ],
+  "min_flowfile_version": "0.15.2",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
