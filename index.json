@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-08-06T07:55:11Z",
+  "generated_at": "2026-09-10T06:02:40Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "814b02df0110560f095736a724632018069a18ba",
+    "commit": "bca7aaa2f365b4d9d6fa9425fd35c31079d64aa2",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -621,6 +621,74 @@
             "path": "nodes/string_cleaner/screenshots/1.png",
             "sha256": "c171f3b20be9319130e5db8376eec0e7befd5a9ff13998722457ecf9ab13d670",
             "size": 44159
+          }
+        ]
+      }
+    },
+    {
+      "id": "unpack",
+      "node_name": "Unpack",
+      "version": "0.1.0",
+      "description": "Flattens one nested column: a List of scalars explodes into one row per element, a Struct unnests into one column per field, and a List of Structs explodes and then unnests into one row per element with one column per field. Empty lists and nulls follow Polars' default explode semantics and yield a ",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Transform",
+      "tags": [
+        "explode",
+        "unnest",
+        "list",
+        "struct",
+        "json",
+        "flatten"
+      ],
+      "environment": "local",
+      "dependencies": [],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.17.3",
+      "designer_editable": false,
+      "risk_flags": [],
+      "published_at": "2026-09-10T06:02:40Z",
+      "updated_at": "2026-09-10T06:02:40Z",
+      "changelog": "",
+      "path": "nodes/unpack",
+      "artifacts": {
+        "node": {
+          "path": "nodes/unpack/node.py",
+          "sha256": "8f4f428bcff84750f4092454dc5f3d59258772de73a90fe9bd8695c1cd0f03b0",
+          "size": 5883
+        },
+        "manifest": {
+          "path": "nodes/unpack/manifest.json",
+          "sha256": "5433de5fad087a99721e93e3b4cf797708e8493d3fc41186e0b063d35111203b",
+          "size": 867
+        },
+        "icon": {
+          "path": "nodes/unpack/icon.png",
+          "sha256": "0721750d8c9cd009c667b12fecc3e040aaaacb613ded3a7c4212767626ff07c9",
+          "size": 21120
+        },
+        "readme": {
+          "path": "nodes/unpack/README.md",
+          "sha256": "0d475824e21bec995af912dac4a6975fd8f9705b0f11e585f002cd0bc836b33e",
+          "size": 4545
+        },
+        "screenshots": [
+          {
+            "path": "nodes/unpack/screenshots/1.png",
+            "sha256": "246e420d1df4829b0fed9c6ff405ccc13b9244b662b49964225845298e156679",
+            "size": 139772
+          },
+          {
+            "path": "nodes/unpack/screenshots/2.png",
+            "sha256": "55d1e54891fb2262133190ab38aa0aa981648e64dfa7fb0c5cecbf79f0aa7804",
+            "size": 122561
           }
         ]
       }
