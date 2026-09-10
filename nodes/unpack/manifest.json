@@ -1,0 +1,32 @@
+{
+  "manifest_version": 1,
+  "id": "unpack",
+  "node_name": "Unpack",
+  "version": "0.1.0",
+  "description": "Flattens one nested column: a List of scalars explodes into one row per element, a Struct unnests into one column per field, and a List of Structs explodes and then unnests into one row per element with one column per field. Empty lists and nulls follow Polars' default explode semantics and yield a ",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "explode",
+    "unnest",
+    "list",
+    "struct",
+    "json",
+    "flatten"
+  ],
+  "min_flowfile_version": "0.17.3",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png",
+    "screenshots/2.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
