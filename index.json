@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T19:56:18Z",
+  "generated_at": "2026-09-12T20:10:14Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "023b17f1ab2d207baacfbd33d713425862bf5d4f",
+    "commit": "f651639c298e970bd3338bd697c41e5441588674",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -446,6 +446,68 @@
       }
     },
     {
+      "id": "buffer",
+      "node_name": "Buffer",
+      "version": "0.3.0",
+      "description": "Grows each shape by a set distance, answering questions like 'which homes are within 500 m of a station?'. Measured on the ground, so it holds up far from the equator.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Geospatial",
+      "tags": [
+        "geospatial",
+        "buffer",
+        "zone",
+        "catchment",
+        "duckdb"
+      ],
+      "environment": "local",
+      "dependencies": [],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.17.4",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-09-12T20:10:14Z",
+      "updated_at": "2026-09-12T20:10:14Z",
+      "changelog": "",
+      "path": "nodes/buffer",
+      "artifacts": {
+        "node": {
+          "path": "nodes/buffer/node.py",
+          "sha256": "9422bb592bebc9d700138f51c658a4acb9995b308364a94756b2be76f5896cc5",
+          "size": 10833
+        },
+        "manifest": {
+          "path": "nodes/buffer/manifest.json",
+          "sha256": "38e1f24e9aaece978dae6b654097bcdea4abc5de5771e9ced189604536d19f73",
+          "size": 702
+        },
+        "icon": {
+          "path": "nodes/buffer/icon.png",
+          "sha256": "3033df520b4a195f09fe0fa1e0a60d78a2bbb5f01aeb78238799dd961d3bf9b2",
+          "size": 11780
+        },
+        "readme": {
+          "path": "nodes/buffer/README.md",
+          "sha256": "893ae609997186e5ecb335936df646835495d1a3af6d0f45193c00bf684a348a",
+          "size": 1437
+        },
+        "screenshots": [
+          {
+            "path": "nodes/buffer/screenshots/1.png",
+            "sha256": "817e1db08f23d4acdd8364f445fcd52a343385e8b9b7b571fce6cdaea9732e89",
+            "size": 164886
+          }
+        ]
+      }
+    },
+    {
       "id": "create_points",
       "node_name": "Create Points",
       "version": "0.3.0",
@@ -503,6 +565,68 @@
             "path": "nodes/create_points/screenshots/1.png",
             "sha256": "3f9a53b84c7a79e5cceb86ce19b61514f45119b8ecb99b7f1ef2cc92848798ca",
             "size": 151847
+          }
+        ]
+      }
+    },
+    {
+      "id": "distance",
+      "node_name": "Distance",
+      "version": "0.3.0",
+      "description": "Adds the real ground distance between two places on each row, in kilometres, metres or miles. Works straight off latitude and longitude columns, with no setup.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Geospatial",
+      "tags": [
+        "geospatial",
+        "distance",
+        "latitude",
+        "longitude",
+        "measure"
+      ],
+      "environment": "local",
+      "dependencies": [],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.17.4",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-09-12T20:10:14Z",
+      "updated_at": "2026-09-12T20:10:14Z",
+      "changelog": "",
+      "path": "nodes/distance",
+      "artifacts": {
+        "node": {
+          "path": "nodes/distance/node.py",
+          "sha256": "bff968c23b4ba0164595956974579374d83786c06951b376cd496a61bc4115cc",
+          "size": 13953
+        },
+        "manifest": {
+          "path": "nodes/distance/manifest.json",
+          "sha256": "65153a35f6897652ee771717f9980ac6a1a5692c937cb811394ec5cdd4ad9897",
+          "size": 705
+        },
+        "icon": {
+          "path": "nodes/distance/icon.png",
+          "sha256": "bb0468127f189a574e4ed29c0a13c1d815f6b0ddc0f6fe3f9e612bb11773bfb5",
+          "size": 10488
+        },
+        "readme": {
+          "path": "nodes/distance/README.md",
+          "sha256": "0d520d5b22e8f860124f7e31b5934b6d7e79cb0e59e0e76caa0237e882f0a414",
+          "size": 1455
+        },
+        "screenshots": [
+          {
+            "path": "nodes/distance/screenshots/1.png",
+            "sha256": "3eaa32f81b3dd872654d85f1ec09d348348e3b554309748bf68121974797ede5",
+            "size": 194580
           }
         ]
       }
@@ -569,6 +693,68 @@
       }
     },
     {
+      "id": "measure",
+      "node_name": "Measure",
+      "version": "0.2.0",
+      "description": "Adds the area, length and centre point of every shape as ordinary columns, so you can sort, filter and total them. Measured on the ground, accurate at any latitude.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Geospatial",
+      "tags": [
+        "geospatial",
+        "measure",
+        "area",
+        "length",
+        "centroid"
+      ],
+      "environment": "local",
+      "dependencies": [],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.17.4",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-09-12T20:10:14Z",
+      "updated_at": "2026-09-12T20:10:14Z",
+      "changelog": "",
+      "path": "nodes/measure",
+      "artifacts": {
+        "node": {
+          "path": "nodes/measure/node.py",
+          "sha256": "152ff55fbd5c7ea679a3507c2c3d34af7d0f93be5152c0df3eddd4462e42b46a",
+          "size": 10311
+        },
+        "manifest": {
+          "path": "nodes/measure/manifest.json",
+          "sha256": "eb5ccb1be25d023d3e33ea272fc3170a908db9111de83f371afbd6d5b75ad42d",
+          "size": 701
+        },
+        "icon": {
+          "path": "nodes/measure/icon.png",
+          "sha256": "9229b295ec10a0fb4681050512c0c5f46270c6b5a4fcc46b408722006fb61a9a",
+          "size": 10994
+        },
+        "readme": {
+          "path": "nodes/measure/README.md",
+          "sha256": "927ef55d7fd6b0234febaa2d896d41147fa26c3aec2caf03b39c7b0e0109513d",
+          "size": 1392
+        },
+        "screenshots": [
+          {
+            "path": "nodes/measure/screenshots/1.png",
+            "sha256": "31d891682a3fce8a332d49199f6f18acc8be2147794500e7ae24048d0e2d9644",
+            "size": 147984
+          }
+        ]
+      }
+    },
+    {
       "id": "mood_emoji",
       "node_name": "Mood Emoji",
       "version": "1.0.0",
@@ -624,6 +810,68 @@
             "path": "nodes/mood_emoji/screenshots/form.png",
             "sha256": "7de86778b1177aefc9810ed3b5f0988078487c88ef18871a2ce7eba2b088e846",
             "size": 503
+          }
+        ]
+      }
+    },
+    {
+      "id": "spatial_join",
+      "node_name": "Spatial Join",
+      "version": "0.3.0",
+      "description": "Tags each row with the area it falls inside - every customer with its district, every incident with its region. Matched and unmatched rows come out of separate outputs.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Geospatial",
+      "tags": [
+        "geospatial",
+        "join",
+        "point in polygon",
+        "match",
+        "duckdb"
+      ],
+      "environment": "local",
+      "dependencies": [],
+      "number_of_inputs": 2,
+      "number_of_outputs": 2,
+      "min_flowfile_version": "0.17.4",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-09-12T20:10:14Z",
+      "updated_at": "2026-09-12T20:10:14Z",
+      "changelog": "",
+      "path": "nodes/spatial_join",
+      "artifacts": {
+        "node": {
+          "path": "nodes/spatial_join/node.py",
+          "sha256": "6a776c713ebd4fc6f95dad13480b7e72a97f28de578af865de6dce6f8bd11ced",
+          "size": 15253
+        },
+        "manifest": {
+          "path": "nodes/spatial_join/manifest.json",
+          "sha256": "58a5a1716dbce351514f22d5e9e029f4e5c0a7c1ed3e7a9ef3e90d5ef9f98e5c",
+          "size": 721
+        },
+        "icon": {
+          "path": "nodes/spatial_join/icon.png",
+          "sha256": "dd2adcee6ac5d74e5235c6545e7cb58de2f53840d64596ab905f1b0a65ea7c79",
+          "size": 12316
+        },
+        "readme": {
+          "path": "nodes/spatial_join/README.md",
+          "sha256": "cacf33f641957c023618e5b601fa1ff426774f82e385a27738a2ee939e8d8cf7",
+          "size": 1489
+        },
+        "screenshots": [
+          {
+            "path": "nodes/spatial_join/screenshots/1.png",
+            "sha256": "42b95e06456217a6d33ced553f1d580001c61c6c0aa0ddb0b081291abb4b61fe",
+            "size": 172666
           }
         ]
       }
