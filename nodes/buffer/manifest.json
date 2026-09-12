@@ -1,0 +1,30 @@
+{
+  "manifest_version": 1,
+  "id": "buffer",
+  "node_name": "Buffer",
+  "version": "0.3.0",
+  "description": "Grows each shape by a set distance, answering questions like 'which homes are within 500 m of a station?'. Measured on the ground, so it holds up far from the equator.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "geospatial",
+    "buffer",
+    "zone",
+    "catchment",
+    "duckdb"
+  ],
+  "min_flowfile_version": "0.17.4",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
