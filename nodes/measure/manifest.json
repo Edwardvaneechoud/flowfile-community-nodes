@@ -1,0 +1,30 @@
+{
+  "manifest_version": 1,
+  "id": "measure",
+  "node_name": "Measure",
+  "version": "0.2.0",
+  "description": "Adds the area, length and centre point of every shape as ordinary columns, so you can sort, filter and total them. Measured on the ground, accurate at any latitude.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "geospatial",
+    "measure",
+    "area",
+    "length",
+    "centroid"
+  ],
+  "min_flowfile_version": "0.17.4",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
