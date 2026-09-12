@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T17:26:56Z",
+  "generated_at": "2026-09-12T19:56:18Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "9b144766b0c41bd8f217bdd83de9c4b09067eb1f",
+    "commit": "023b17f1ab2d207baacfbd33d713425862bf5d4f",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -441,6 +441,68 @@
             "path": "nodes/automl_store_model/screenshots/2.png",
             "sha256": "91861b63ac9f9127deab83dee7a81822db615507ea3504dad37439ef90996f50",
             "size": 27753
+          }
+        ]
+      }
+    },
+    {
+      "id": "create_points",
+      "node_name": "Create Points",
+      "version": "0.3.0",
+      "description": "Turns latitude and longitude columns into map points, so a plain spreadsheet can be buffered, measured, joined and drawn. Runs offline with no setup.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Geospatial",
+      "tags": [
+        "geospatial",
+        "points",
+        "coordinates",
+        "latitude",
+        "longitude"
+      ],
+      "environment": "local",
+      "dependencies": [],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.17.4",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-09-12T19:56:18Z",
+      "updated_at": "2026-09-12T19:56:18Z",
+      "changelog": "",
+      "path": "nodes/create_points",
+      "artifacts": {
+        "node": {
+          "path": "nodes/create_points/node.py",
+          "sha256": "dc22b916309a816c88c6a22cf2f369f82958d5cb8c9f5d408df0c27ee8038346",
+          "size": 10018
+        },
+        "manifest": {
+          "path": "nodes/create_points/manifest.json",
+          "sha256": "5a78b3838acc85485d819de282b508fc80bd8bf735c004ed673d7dfe07bdb7c6",
+          "size": 707
+        },
+        "icon": {
+          "path": "nodes/create_points/icon.png",
+          "sha256": "737ab77140c27b38cbd3dc1849005b5cb88eeee40111bd6f782844133a7451d5",
+          "size": 8781
+        },
+        "readme": {
+          "path": "nodes/create_points/README.md",
+          "sha256": "c23e36d808a70f22bb153627c6bfd5789ecd0816adb517f0cd456db3dbe1b3b3",
+          "size": 1494
+        },
+        "screenshots": [
+          {
+            "path": "nodes/create_points/screenshots/1.png",
+            "sha256": "3f9a53b84c7a79e5cceb86ce19b61514f45119b8ecb99b7f1ef2cc92848798ca",
+            "size": 151847
           }
         ]
       }
