@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-10T06:02:40Z",
+  "generated_at": "2026-09-12T17:26:56Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "bca7aaa2f365b4d9d6fa9425fd35c31079d64aa2",
+    "commit": "9b144766b0c41bd8f217bdd83de9c4b09067eb1f",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -564,6 +564,62 @@
             "size": 503
           }
         ]
+      }
+    },
+    {
+      "id": "spatial_read",
+      "node_name": "Spatial Read",
+      "version": "0.2.0",
+      "description": "Loads a Shapefile, GeoJSON, GeoParquet, FlatGeobuf, GeoPackage or KML as a table, one row per shape. Reads from this machine, and needs internet once to fetch the map extension.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Geospatial",
+      "tags": [
+        "geospatial",
+        "reader",
+        "shapefile",
+        "geojson",
+        "duckdb"
+      ],
+      "environment": "local",
+      "dependencies": [],
+      "number_of_inputs": 0,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.17.4",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-09-12T17:26:56Z",
+      "updated_at": "2026-09-12T17:26:56Z",
+      "changelog": "",
+      "path": "nodes/spatial_read",
+      "artifacts": {
+        "node": {
+          "path": "nodes/spatial_read/node.py",
+          "sha256": "06b5175e9f61ffbd2170fe2d3db9976ae1172a3896b35f10556dec592d911d94",
+          "size": 12113
+        },
+        "manifest": {
+          "path": "nodes/spatial_read/manifest.json",
+          "sha256": "2974987c5099bf168b2efd344f3446008b250191954347275d172dd15aa50ed2",
+          "size": 700
+        },
+        "icon": {
+          "path": "nodes/spatial_read/icon.png",
+          "sha256": "512f0f53c43786b6ddbfbb6c8dd370fcf07521a3b0e7d2d73f84e0c54cec5c62",
+          "size": 11692
+        },
+        "readme": {
+          "path": "nodes/spatial_read/README.md",
+          "sha256": "ba6dd69bad08d0f6c028e75b81187347478d698f1234c6e8969c20c2db4e9fe9",
+          "size": 1503
+        },
+        "screenshots": []
       }
     },
     {
