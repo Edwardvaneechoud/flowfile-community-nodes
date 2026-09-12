@@ -1,0 +1,30 @@
+{
+  "manifest_version": 1,
+  "id": "create_points",
+  "node_name": "Create Points",
+  "version": "0.3.0",
+  "description": "Turns latitude and longitude columns into map points, so a plain spreadsheet can be buffered, measured, joined and drawn. Runs offline with no setup.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "geospatial",
+    "points",
+    "coordinates",
+    "latitude",
+    "longitude"
+  ],
+  "min_flowfile_version": "0.17.4",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
