@@ -1,0 +1,30 @@
+{
+  "manifest_version": 1,
+  "id": "distance",
+  "node_name": "Distance",
+  "version": "0.3.0",
+  "description": "Adds the real ground distance between two places on each row, in kilometres, metres or miles. Works straight off latitude and longitude columns, with no setup.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "geospatial",
+    "distance",
+    "latitude",
+    "longitude",
+    "measure"
+  ],
+  "min_flowfile_version": "0.17.4",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/1.png"
+  ],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
