@@ -1,0 +1,28 @@
+{
+  "manifest_version": 1,
+  "id": "spatial_read",
+  "node_name": "Spatial Read",
+  "version": "0.2.0",
+  "description": "Loads a Shapefile, GeoJSON, GeoParquet, FlatGeobuf, GeoPackage or KML as a table, one row per shape. Reads from this machine, and needs internet once to fetch the map extension.",
+  "author": {
+    "github": "Edwardvaneechoud",
+    "name": "edwardvaneechoud",
+    "url": ""
+  },
+  "maintainers": [],
+  "license": "MIT",
+  "category": "Utilities",
+  "tags": [
+    "geospatial",
+    "reader",
+    "shapefile",
+    "geojson",
+    "duckdb"
+  ],
+  "min_flowfile_version": "0.17.4",
+  "icon": "icon.png",
+  "screenshots": [],
+  "homepage": "",
+  "repository": "",
+  "changelog": ""
+}
