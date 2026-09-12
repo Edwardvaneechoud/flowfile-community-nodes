@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T19:56:32Z",
+  "generated_at": "2026-09-12T20:10:30Z",
   "repo_stars": 0,
   "nodes": {
     "attribute_importance": {
@@ -39,11 +39,23 @@
       "discussion_number": 28,
       "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/28"
     },
+    "buffer": {
+      "upvotes": 0,
+      "comments": 0,
+      "discussion_number": 42,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/42"
+    },
     "create_points": {
       "upvotes": 0,
       "comments": 0,
       "discussion_number": 41,
       "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/41"
+    },
+    "distance": {
+      "upvotes": 0,
+      "comments": 0,
+      "discussion_number": 43,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/43"
     },
     "kmeans_clustering": {
       "upvotes": 1,
@@ -51,11 +63,23 @@
       "discussion_number": 7,
       "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/7"
     },
+    "measure": {
+      "upvotes": 0,
+      "comments": 0,
+      "discussion_number": 44,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/44"
+    },
     "mood_emoji": {
       "upvotes": 1,
       "comments": 0,
       "discussion_number": 4,
       "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/4"
+    },
+    "spatial_join": {
+      "upvotes": 0,
+      "comments": 0,
+      "discussion_number": 45,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/45"
     },
     "spatial_read": {
       "upvotes": 0,
