@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T20:10:30Z",
+  "generated_at": "2026-09-13T07:58:27Z",
   "repo_stars": 0,
   "nodes": {
     "attribute_importance": {
@@ -62,6 +62,12 @@
       "comments": 0,
       "discussion_number": 7,
       "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/7"
+    },
+    "map_preview": {
+      "upvotes": 0,
+      "comments": 0,
+      "discussion_number": 46,
+      "discussion_url": "https://github.com/Edwardvaneechoud/flowfile-community-nodes/discussions/46"
     },
     "measure": {
       "upvotes": 0,
