@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-09-12T20:10:14Z",
+  "generated_at": "2026-09-13T07:58:13Z",
   "registry": {
     "repo": "edwardvaneechoud/flowfile-community-nodes",
-    "commit": "f651639c298e970bd3338bd697c41e5441588674",
+    "commit": "68a87002af18d4c53353cefb143e178c498f001e",
     "min_supported_app_version": "0.13.1"
   },
   "categories": [
@@ -688,6 +688,72 @@
             "path": "nodes/kmeans_clustering/screenshots/1.png",
             "sha256": "7b9e0b5eb89e038e09d42705a9e4dbe45198a1beb1f7e2837c634e9146ded4fa",
             "size": 167821
+          }
+        ]
+      }
+    },
+    {
+      "id": "map_preview",
+      "node_name": "Map Preview",
+      "version": "0.1.0",
+      "description": "Draws the shapes on a map you can open from this node's Artifacts tab after a run. The data passes through unchanged, so you can drop it anywhere in a flow.",
+      "author": {
+        "github": "Edwardvaneechoud",
+        "name": "edwardvaneechoud",
+        "url": ""
+      },
+      "maintainers": [],
+      "license": "MIT",
+      "category": "Utilities",
+      "palette_category": "Geospatial",
+      "tags": [
+        "geospatial",
+        "map",
+        "visualization",
+        "artifact-preview"
+      ],
+      "environment": "kernel",
+      "dependencies": [],
+      "number_of_inputs": 1,
+      "number_of_outputs": 1,
+      "min_flowfile_version": "0.17.4",
+      "designer_editable": true,
+      "risk_flags": [],
+      "published_at": "2026-09-13T07:58:13Z",
+      "updated_at": "2026-09-13T07:58:13Z",
+      "changelog": "",
+      "path": "nodes/map_preview",
+      "artifacts": {
+        "node": {
+          "path": "nodes/map_preview/node.py",
+          "sha256": "8eb50a6810167b65982da9e8d7b7858659d61d61cbee2c98ae173f423dbcb6f1",
+          "size": 29931
+        },
+        "manifest": {
+          "path": "nodes/map_preview/manifest.json",
+          "sha256": "183aca22211e991aea8efe4d3e7a5a0ddccb86734366f23720030e4710278257",
+          "size": 725
+        },
+        "icon": {
+          "path": "nodes/map_preview/icon.png",
+          "sha256": "1283f6aca175fddec9daf8718c1c5fb72100f563257604c27d85e39c4ce08c92",
+          "size": 12410
+        },
+        "readme": {
+          "path": "nodes/map_preview/README.md",
+          "sha256": "548f2b2ad056110f64cf4fb8a3fc80b417c7b1f7c02085b8930514b09d4fd0d6",
+          "size": 1444
+        },
+        "screenshots": [
+          {
+            "path": "nodes/map_preview/screenshots/1.png",
+            "sha256": "ac56659d88b7afbe0a5d09492a3341d6b0dfd36b76e0341d2d106598a6d3e74e",
+            "size": 185788
+          },
+          {
+            "path": "nodes/map_preview/screenshots/2.png",
+            "sha256": "9fc95bf00f14b8e801df2ae928ca16dcb6c318f79395c418c7977a341a0741fa",
+            "size": 355857
           }
         ]
       }
